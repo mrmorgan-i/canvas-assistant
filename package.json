@@ -3,25 +3,48 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack --port 3001",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-keys": "node scripts/generate-lti-keys.js",
+    "generate-encryption-secret": "node scripts/generate-encryption-secret.js",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^1.3.23",
+    "@hookform/resolvers": "^5.1.1",
+    "@neondatabase/serverless": "^1.0.1",
+    "@types/jsonwebtoken": "^9.0.10",
+    "ai": "^4.3.17",
+    "dotenv": "^17.1.0",
+    "drizzle-kit": "^0.31.4",
+    "drizzle-orm": "^0.44.2",
+    "drizzle-zod": "^0.8.2",
+    "jose": "^6.0.11",
+    "jsonwebtoken": "^9.0.2",
+    "next": "15.3.5",
+    "openai": "^5.8.3",
+    "postgres": "^3.4.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.3.5"
+    "react-hook-form": "^7.60.0",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@next/bundle-analyzer": "^15.3.5",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.3.5",
-    "@eslint/eslintrc": "^3"
+    "eslint-plugin-drizzle": "^0.2.3",
+    "mkcert": "^3.2.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }

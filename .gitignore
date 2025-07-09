@@ -33,6 +33,14 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# LTI keys and certificates
+/keys/
+*.pem
+*.key
+
+# Database
+/migrations/
+
 # vercel
 .vercel
 
